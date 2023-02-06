@@ -8,4 +8,5 @@
 .sidebar__icon{
     padding: 15px;
     text-align: center;
+    cursor: pointer;
 }
