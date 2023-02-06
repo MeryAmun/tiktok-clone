@@ -14,7 +14,7 @@ const Footer = ({ channel, description, song}) => {
     <Ticker mode='smooth'>
       {({index}) => (
          <>
-         <p>{song} #{index}</p>
+         <p>{song}</p>
          </>
       )}
     </Ticker>

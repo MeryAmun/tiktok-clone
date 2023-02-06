@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './sidebar.css'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import MessageIcon from '@mui/icons-material/Message';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
 
-const sidebar = () => {
+const Sidebar = ({comments, likes, shares}) => {
+  const [liked, setLiked] = useState(false);
+
+
   return (
-    <div>sidebar</div>
+    <div className='sidebar'>
+     <div className="sidebar__icon">
+  {
+    liked ? (
+      <FavoriteIcon fontSize='large' onClick={() => setLiked(false)}/>
+    ) : (  <FavoriteBorderIcon fontSize='large' onClick={() => setLiked(true)}/>)
+  }
+  <p>{likes}</p>
+     </div>
+     <div className="sidebar__icon">
+  <MessageIcon fontSize='large'/>
+  <p>{comments}</p>
+     </div>
+     <div className="sidebar__icon">
+  <ShareIcon fontSize='large'/>
+  <p>{shares}</p>
+     </div>
+    </div>
   )
 }
 
-export default sidebar
+export default Sidebar
